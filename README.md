@@ -16,10 +16,11 @@ Simply add EMTImageCacheManager.swift to your project, or use CocoaPods.
 ### Podfile
 
 ```ruby
-source "https://github.com/hirokimu/EMTImageCacheManager.git"
-use_frameworks!
 platform :ios, "8.2"
-pod "EMTImageCacheManager", "~> 1.0"
+use_frameworks!
+target :'fotogramme WatchKit Extension', :exclusive => true do
+    pod 'EMTImageCacheManager', '~> 1.0.0'
+end
 ```
 
 ## Usage
