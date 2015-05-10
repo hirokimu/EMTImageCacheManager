@@ -7,13 +7,13 @@
 
 import WatchKit
 
-class EMTImageCacheManager: NSObject {
+public class EMTImageCacheManager: NSObject {
 
     typealias keyInformationDict = Dictionary<String, AnyObject>
     
     var keyInformations: [keyInformationDict]?
     
-    class var instance: EMTImageCacheManager {
+    public class var instance: EMTImageCacheManager {
         struct Singleton {
             static let instance = EMTImageCacheManager()
         }
@@ -24,7 +24,7 @@ class EMTImageCacheManager: NSObject {
         super.init()
     }
     
-    func prepareOrderedCacheInformations() {
+    public func prepareOrderedCacheInformations() {
         if (keyInformations != nil) {
             return
         }
@@ -61,7 +61,7 @@ class EMTImageCacheManager: NSObject {
         return sortedKeyInfos
     }
     
-    func addOrderedCachedImageWithData(data: NSData, name: String) -> String? {
+    public func addOrderedCachedImageWithData(data: NSData, name: String) -> String? {
     
         if (data.length == 0 || name.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0) {
             return nil
@@ -113,7 +113,7 @@ class EMTImageCacheManager: NSObject {
         return nil
     }
 
-    func getOrderedCacheKeyForName(name: String) -> String? {
+    public func getOrderedCacheKeyForName(name: String) -> String? {
         self.prepareOrderedCacheInformations()
         let index = self.indexOfOrderdKeyForName(name)
         if (index != -1) {
@@ -122,7 +122,7 @@ class EMTImageCacheManager: NSObject {
         return nil
     }
     
-    func removeOrderedCachedImageForName(name: String) {
+    public func removeOrderedCachedImageForName(name: String) {
         self.prepareOrderedCacheInformations()
         let removeIndex = self.indexOfOrderdKeyForName(name)
         if (removeIndex != -1) {
@@ -132,7 +132,7 @@ class EMTImageCacheManager: NSObject {
         }
     }
     
-    func removeAllOrderedCachedImage() {
+    public func removeAllOrderedCachedImage() {
         self.prepareOrderedCacheInformations()
         for (index, element) in enumerate(keyInformations!) {
             let dict = element as keyInformationDict
