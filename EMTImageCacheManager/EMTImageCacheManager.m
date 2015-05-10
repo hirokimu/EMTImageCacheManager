@@ -70,16 +70,12 @@ static EMTImageCacheManager *_instance = nil;
     NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
     
     for (NSUInteger i = 0; i < [keyInformations count]; i++) {
-
         NSString *imageKeyToRemove = keyInformations[i][@"key"];
         NSNumber *num = [WKInterfaceDevice currentDevice].cachedImages[imageKeyToRemove];
-
         dataSize -= [num integerValue];
         [[WKInterfaceDevice currentDevice] removeCachedImageWithName:imageKeyToRemove];
         [indexes addIndex:i];
-        NSLog(@"removed: %@", imageKeyToRemove);
         if (dataSize <= 0) break;
-
     }
     if ([indexes count] != 0) {
         [keyInformations removeObjectsAtIndexes:indexes];
@@ -131,7 +127,6 @@ static EMTImageCacheManager *_instance = nil;
     if (removeIndex != -1) {
         [[WKInterfaceDevice currentDevice] removeCachedImageWithName:keyInformations[removeIndex][@"key"]];
         [keyInformations removeObjectAtIndex:removeIndex];
-        NSLog(@"remove OK index %ld", removeIndex);
     }
 }
 
