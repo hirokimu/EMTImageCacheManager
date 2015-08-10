@@ -1,5 +1,5 @@
 #EMTImageCacheManager
-An image cache manager for WKInterfaceDevice of Apple WatchKit
+An image cache manager for WKInterfaceDevice of Apple WatchKit (watchOS 1)
 
 ##How it works
 If you add a data to the cache via EMTImageCacheManager, the cache is automatically named its name as below.
