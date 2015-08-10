@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "EMTImageCacheManager"
-  s.version      = "1.0.4"
+  s.version      = "1.0.6"
   s.summary      = "An image cache manager for WKInterfaceDevice of Apple WatchKit"
   s.description  = <<-DESC
                    If WKInterfaceDevice's .cachedImages is already full, EMTImageCacheManager removes cache files as much as necessary in ascending order by added date.

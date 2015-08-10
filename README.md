@@ -18,7 +18,7 @@ Simply add class files to your project, or use CocoaPods.
 ```ruby
 platform :ios, "8.2"
 target :'Your WatchKit Extension Name', :exclusive => true do
-    pod 'EMTImageCacheManager', '~> 1.0.0'
+    pod 'EMTImageCacheManager', '~> 1.0.6'
 end
 ```
 
